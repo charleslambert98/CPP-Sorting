@@ -14,7 +14,7 @@
 using namespace std;
 class wordInfo {
     friend class NodeT;
-    friend class AVLTree;
+    friend class BSTY;
     friend class Sorting;
     friend class AC;
     string word;

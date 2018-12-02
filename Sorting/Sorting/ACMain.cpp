@@ -8,8 +8,6 @@
 
 #include <iostream>
 #include "AC.hpp"
-#include <conio.h>
-#include <windows.h>
 int main(void)
 {
     AC wordset("DrSeuss.txt");

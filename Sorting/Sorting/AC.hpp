@@ -8,8 +8,8 @@
 
 #ifndef AC_HPP_
 #define AC_HPP_
-#include "BSTY.hpp"
 #include "wordInfo.hpp"
+#include "BSTY.hpp"
 #include "Sorting.hpp" // You write
 #include <iostream>
 using namespace std;

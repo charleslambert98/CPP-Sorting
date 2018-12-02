@@ -28,7 +28,7 @@ bool BSTY:: insertit(string x) {
         return true;
     }
     while (tmp->height >= 1){
-        if (n->data > tmp->data){
+        if (n->w > tmp->w){
             if (tmp->right != NULL){
                 tmp = tmp->right;
             }
@@ -39,7 +39,7 @@ bool BSTY:: insertit(string x) {
                 return true;
             }
         }
-        else if (n->data < tmp->data){
+        else if (n->w < tmp->w){
             if (tmp->left != NULL){
                 tmp = tmp->left;
             }
@@ -58,7 +58,7 @@ bool BSTY:: insertit(string x) {
     return false;
 }
 
-bool BSTY:: insertit(string data, string def) {
+/*bool BSTY:: insertit(string data, string def) {
     NodeT *n = new NodeT(data, def);
     NodeT *tmp = root;
     
@@ -67,7 +67,7 @@ bool BSTY:: insertit(string data, string def) {
         return true;
     }
     while (tmp->height >= 1){
-        if (n->data > tmp->data){
+        if (n->w > tmp->w){
             if (tmp->right != NULL){
                 tmp = tmp->right;
             }
@@ -78,7 +78,7 @@ bool BSTY:: insertit(string data, string def) {
                 return true;
             }
         }
-        else if (n->data < tmp->data){
+        else if (n->w < tmp->w){
             if (tmp->left != NULL){
                 tmp = tmp->left;
             }
@@ -96,7 +96,7 @@ bool BSTY:: insertit(string data, string def) {
     }
     return false;
 }
-
+*/
 // the adjustHeights method updates the heights of every ancestor of the node n.
 // This method will be massively useful with our next lab, so make sure you have 
 // this working now.  It should be called whenever you change the height of a 
@@ -295,7 +295,7 @@ void BSTY::myPrint(NodeT *n) {
 	}
 	else {
 		myPrint(n->left);
-		cout << n->data.length()-1;
+		cout << n->w->word.length()-1;
 		if (mine) {
 			cout <<".";
 			mine = false;
@@ -313,17 +313,17 @@ NodeT *BSTY::find(string x) {
     NodeT *n = root;
     int compCount = 0;
     
-    if (n->data == x){ //Covers the root node being picked
+    if (n->w->word == x){ //Covers the root node being picked
         n->printNode();
         return n;
     }
     
-    while (n->data != x){
+    while (n->w->word != x){
         if (n->height == 1){ //Covers reaching the end
             cout << x << " can't be found" << endl;
             return NULL;
         }
-        if (x > n->data){ //Move right
+        if (x > n->w->word){ //Move right
             if (n->right != NULL){
                 n = n->right;
                 compCount++;
@@ -333,7 +333,7 @@ NodeT *BSTY::find(string x) {
                 return NULL;
             }
         }
-        else if (x < n->data){ //Move left
+        else if (x < n->w->word){ //Move left
             if (n->left != NULL){
                 n = n->left;
                 compCount++;
@@ -382,7 +382,7 @@ NodeT *BSTY::find(string x) {
 bool BSTY::remove(string s) {
     NodeT *tmp = root;
     while (tmp->height >= 1){
-        if (tmp->data == s){
+        if (tmp->w->word == s){
             if (tmp->height == 1){
                 remove1(tmp);
                 return true;
@@ -402,12 +402,12 @@ bool BSTY::remove(string s) {
         }
         else{
             if(tmp->right != NULL){
-                if(s > tmp->data){
+                if(s > tmp->w->word){
                     tmp = tmp->right;
                 }
             }
             if(tmp->left != NULL){
-                if (s < tmp->data){
+                if (s < tmp->w->word){
                     tmp = tmp->left;
                 }
             }
@@ -531,13 +531,13 @@ void BSTY::myPrintEC(NodeT *n) {
 	}
 	else {
 		myPrintEC(n->left);
-		cout << alpha[n->data.length()-2];
+		cout << alpha[n->w->word.length()-2];
 		myPrintEC(n->right);
 	}
 }
 
 NodeT *BSTY::rotateRight(NodeT *n){
-    cout << n->data << " must rotate right (" << findBalance(n) << ")" << endl;
+    cout << n->w->word << " must rotate right (" << findBalance(n) << ")" << endl;
     
     if (n == root){
         NodeT *tmp = n->left;
@@ -587,7 +587,7 @@ NodeT *BSTY::rotateRight(NodeT *n){
 }
 
 NodeT *BSTY::rotateLeft(NodeT *n){
-    cout << n->data << " must rotate left (" << findBalance(n) << ")" << endl;
+    cout << n->w->word << " must rotate left (" << findBalance(n) << ")" << endl;
     
     if (n == root){
         NodeT *tmp = n->right;

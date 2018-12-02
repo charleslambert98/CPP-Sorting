@@ -13,7 +13,7 @@
 using namespace std;
 class NodeT {
     friend class AC;
-    friend class AVLTree;
+    friend class BSTY;
     wordInfo *w;
     int height;
     NodeT *left;

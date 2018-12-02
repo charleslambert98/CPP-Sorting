@@ -135,7 +135,7 @@ int AC::findEnd() {
     while (b<=e) {
         if (verbose) {
             cout << "B is " << b << ", E is " << e <<", "<<" m is "<<m << endl;
-            cout << curr << ","<<wordarr[m]->word << ","<< curr.compare(wordarr[m]->word.substr(0,curr.length)))<<endl;
+            cout << curr << "," << wordarr[m]->word << "," << curr.compare(wordarr[m]->word.substr(0,curr.length())) << endl;
         }
         if (curr.compare(wordarr[m]->word.substr(0,curr.length()))==0) {
             e = m;
@@ -192,8 +192,8 @@ void AC::convertToArray() {
             delete [] wordarr;
         }
         if (verbose)
-            cout << "New Size: " << tree->size << endl;
-        wordarr= new wordInfo *[tree->size];
+            cout << "New Size: " << tree->root->height << endl;
+        wordarr= new wordInfo *[tree->root->height];
         currSize = 0;
         convertToArray(tree->root);
     }
@@ -212,7 +212,7 @@ void AC::convertToArray(NodeT *n) {
 }
 void AC::printArr() {
     //cout << "HERE!! Size is " << tree->size << endl <<endl << endl;
-    for (int i = 0; i < tree->size; i++) {
+    for (int i = 0; i < tree->root->height; i++) {
         cout << i << "|";
         wordarr[i]->printWord();
     }
