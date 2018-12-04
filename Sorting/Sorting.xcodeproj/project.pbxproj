@@ -28,6 +28,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A116A59C21B5F1A9000EA2EB /* SmallSeuss.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SmallSeuss.txt; sourceTree = "<group>"; };
 		A19AF75821B05EC800FE3CCD /* Sorting */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sorting; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19AF76F21B09ACB00FE3CCD /* wordInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wordInfo.cpp; sourceTree = "<group>"; };
 		A19AF77021B09ACB00FE3CCD /* AC.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AC.hpp; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 				A19AF76F21B09ACB00FE3CCD /* wordInfo.cpp */,
 				A19AF77421B09ACC00FE3CCD /* wordInfo.hpp */,
 				A19AF77D21B09B4F00FE3CCD /* Sorting.cpp */,
+				A116A59C21B5F1A9000EA2EB /* SmallSeuss.txt */,
 				A19AF77E21B09B4F00FE3CCD /* Sorting.hpp */,
 			);
 			path = Sorting;

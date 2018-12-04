@@ -19,6 +19,7 @@ class Sorting {
     void insertionSort(wordInfo *arr[], int len);
     void selectionSort(wordInfo *arr[], int len);
     void quickSort(wordInfo *arr[], int beg, int end);
+    int partition(wordInfo *arr[], int beg, int end);
     void mergeSort(wordInfo *arr[], int l1, int l2);
     void merge(wordInfo *arr[], int l, int m, int r);
 };
