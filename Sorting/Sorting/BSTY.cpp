@@ -28,7 +28,7 @@ bool BSTY:: insertit(string x) {
         return true;
     }
     while (tmp->height >= 1){
-        if (n->w > tmp->w){
+        if (n->w->word > tmp->w->word){
             if (tmp->right != NULL){
                 tmp = tmp->right;
             }
@@ -39,7 +39,7 @@ bool BSTY:: insertit(string x) {
                 return true;
             }
         }
-        else if (n->w < tmp->w){
+        else if (n->w->word < tmp->w->word){
             if (tmp->left != NULL){
                 tmp = tmp->left;
             }
@@ -51,7 +51,7 @@ bool BSTY:: insertit(string x) {
             }
         }
         else {
-            cout << "That value is already in the tree!" << endl;
+            tmp->w->ct++;
             return false;
         }
     }
@@ -110,9 +110,9 @@ bool BSTY:: insertit(string x) {
 // the loop has worked its way up to the root, or until the currently being checked
 // ancestor is not changed.  
 void BSTY::adjustHeights(NodeT *n) {
-    int balance;
-    int balanceLeft;
-    int balanceRight;
+    //int balance;
+    //int balanceLeft;
+    //int balanceRight;
     
     if (n == NULL){
         return;
@@ -125,18 +125,22 @@ void BSTY::adjustHeights(NodeT *n) {
         
         if (n->right == NULL && n->left == NULL){
             n->height = 1;
+            return;
         }
         else if (n->right == NULL){
             n->height = n->left->height + 1;
+            return;
         }
         else if (n->left == NULL){
             n->height = n->right->height + 1;
+            return;
         }
         else{
             n->height = max(n->right->height + 1, n->left->height + 1);
+            return;
         }
         
-        balance = findBalance(n);
+        /*balance = findBalance(n);
         balanceLeft = findBalance(n->left);
         balanceRight = findBalance(n->right);
         
@@ -206,7 +210,7 @@ void BSTY::adjustHeights(NodeT *n) {
         }
         adjustHeights(n);
         //adjustHeights(n->parent);
-        //balance = findBalance(n);
+        //balance = findBalance(n);*/
     }
     
 }

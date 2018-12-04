@@ -10,9 +10,9 @@
 #include "AC.hpp"
 int main(void)
 {
-    AC wordset("DrSeuss.txt");
+    //AC wordset("DrSeuss.txt");
     //AC wordset("DrSeuss.txt",true);
-    //AC wordset("SmallSeuss.txt");
-    //AC wordset("SmallSeuss.txt",true);
+    AC wordset("/Users/clambert/Documents/Fall 2018/CISC220/Lab6/Sorting/Sorting/SmallSeuss.txt");
+    //AC wordset("/Users/clambert/Documents/Fall 2018/CISC220/Lab6/Sorting/Sorting/SmallSeuss.txt",true);
     return 0;
 }
