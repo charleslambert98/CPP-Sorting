@@ -24,6 +24,20 @@
       </ContextState>
       <ContextState
          contextName = "Sorting::partition(wordInfo**, int, int):Sorting.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "arr[2]">
+            </PersistentString>
+            <PersistentString
+               value = "arr[0]">
+            </PersistentString>
+            <PersistentString
+               value = "arr[3]">
+            </PersistentString>
+            <PersistentString
+               value = "arr[1]">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "AC::ui():AC.cpp">

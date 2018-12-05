@@ -39,35 +39,29 @@ void Sorting::selectionSort(wordInfo *arr[], int len){
 }
 
 void Sorting::quickSort(wordInfo *arr[], int beg, int end){
-    if (end - beg > 1){
+    if (beg < end){
         int pivot = partition(arr, beg, end);
         quickSort(arr, beg, pivot-1);
-        quickSort(arr, beg, pivot+1);
+        quickSort(arr, pivot+1, end);
     }
 }
 
 int Sorting::partition(wordInfo *arr[], int beg, int end){
-    int part = beg;
-    int pivot = arr[beg]->ct;
-    int i = beg + 1;
-    int j = end;
-    wordInfo tmp;
-    while (i <= j){
-        while (arr[i]->ct < pivot){
+    int pivot = arr[end]->ct;
+    int i = beg - 1;
+    
+    for(int j = beg; j < end; j++){
+        if (arr[j]->ct > pivot){
             i++;
-        }
-        while (arr[j]->ct > pivot){
-            j--;
-        }
-        if (i <= j){
-            tmp = *arr[i];
-            arr[i] = arr[j];
+            wordInfo tmp = *arr[i];
+            *arr[i] = *arr[j];
             *arr[j] = tmp;
-            i++;
-            j--;
         }
     }
-    return part;
+    wordInfo tmp2 = *arr[i+1];
+    *arr[i+1] = *arr[end];
+    *arr[end] = tmp2;
+    return i+1;
 }
 
 void Sorting::mergeSort(wordInfo *arr[], int l1, int l2){
