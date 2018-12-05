@@ -28,11 +28,11 @@ void Sorting::insertionSort(wordInfo *arr[], int len){
 
 void Sorting::selectionSort(wordInfo *arr[], int len){
     for (int i = 0; i < len; i++){
-        for (int j = i+1; j < len; j++){
-            if (arr[i]->ct > arr[j]->ct){
-                wordInfo tmp = *arr[j];
-                arr[j-1] = arr[i];
-                arr[i] = arr[j];
+        for (int j = i+1; j < len - 1; j++){
+            if (arr[j]->ct > arr[i]->ct){
+                wordInfo tmp = *arr[i];
+                *arr[i] = *arr[j];
+                *arr[j] = tmp;
             }
         }
     }

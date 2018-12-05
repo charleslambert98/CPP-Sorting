@@ -99,7 +99,7 @@ void AC::getPredictions() {
             cout << endl;
         }
         if (len > 1) {
-            int r = 1;//int r = rand()%4;
+            int r = 0;//int r = rand()%4;
             if (r==0) {
                 if (verbose)
                     cout << "Selection: "<< endl;

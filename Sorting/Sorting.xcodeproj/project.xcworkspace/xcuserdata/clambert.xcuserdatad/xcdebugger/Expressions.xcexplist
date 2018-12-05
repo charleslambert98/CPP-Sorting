@@ -3,6 +3,23 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "Sorting::selectionSort(wordInfo**, int):Sorting.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "arr[2]">
+            </PersistentString>
+            <PersistentString
+               value = "arr[0]">
+            </PersistentString>
+            <PersistentString
+               value = "arr[3]">
+            </PersistentString>
+            <PersistentString
+               value = "arr[1]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "BSTY::insertit(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt;):BSTY.cpp">
       </ContextState>
       <ContextState
