@@ -65,9 +65,49 @@ int Sorting::partition(wordInfo *arr[], int beg, int end){
 }
 
 void Sorting::mergeSort(wordInfo *arr[], int l1, int l2){
-    
+    if (l1 < l2){
+        int m = (l1+l2)/2;
+        
+        mergeSort(arr, l1, m);
+        mergeSort(arr, m+1, l2);
+        
+        merge(arr, l1, m, l2);
+    }
 }
 
 void Sorting::merge(wordInfo *arr[], int l, int m, int r){
+    int i, j, k;
     
+    int len1 = m - 1 + 1;
+    int len2 = r - m;
+    
+    wordInfo *nArr1[len1], *nArr2[len2];
+    
+    for (i = 0; i < len1; i++){
+        nArr1[i] = arr[i+1];
+    }
+    for (j = 0; j < len2; j++){
+        nArr2[j] = arr[m+1+j];
+    }
+    
+    i = 0;
+    j = 0;
+    k = 1;
+    
+    while(i < len1 && j < len2){
+        if (nArr1[i]->ct > nArr2[j]->ct){
+            arr[k] = nArr1[i];
+            i++;
+        }
+        else{
+            arr[k] = nArr2[j];
+            j++;
+        }
+        k++;
+    }
+    while (j < len2){
+        arr[k] = nArr2[j];
+        j++;
+        k++;
+    }
 }
