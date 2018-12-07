@@ -6,6 +6,13 @@
 //  Copyright © 2018 Charles Lambert. All rights reserved.
 //
 
+/*
+ Part 3
+ Question 1:  The counts change in the outputted array even though the tree code is the code that has words added to it.  However, the printed array still shows the updated count of the words.  This is due to the fact the array is printed based off of the newly created tree.  The new array takes the new count and even words (if applicable) and then prints them out, in the correctly sorted order, which is why the new array takes in the new counts/words.
+ 
+ Question 2:  The algorithm used in the find methods is a binary searching algorithm.
+ */
+
 #include "Sorting.hpp"
 #include <iostream>
 #include <string>
